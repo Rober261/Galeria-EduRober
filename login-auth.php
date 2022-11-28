@@ -5,15 +5,17 @@
 		$pass = $_POST['pass'];
 		
 		$sql ="SELECT * FROM authors WHERE email = '$email' and password= '$pass'";
-		echo $sql;
 		$result = $conn->query($sql);
 		$row = $result->fetch_array();
 		if($row){
 			?>
 		<script>window.location.replace("http://localhost/Servidor/Galeria-EduRober/Galeria-EduRober/gallery.php");</script>
 		<?php
+		}else{
+			$aux = true;
 		}
 	}
+	$aux = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +69,11 @@
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-					
+					<?php
+					if ($aux == true) {
+						echo "Credenciales incorrectas";
+					}
+					?>
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" name="btn-login">
 							Login
