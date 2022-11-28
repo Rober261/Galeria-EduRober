@@ -1,6 +1,5 @@
 <?php
 	include("includes/include-connection.php");
-	var_dump($_POST);
 	if (isset($_POST['btn-login'])) {
 		$email = $_POST['email'];
 		$pass = $_POST['pass'];
