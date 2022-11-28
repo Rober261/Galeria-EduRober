@@ -1,7 +1,9 @@
 <?php 
 echo "hola y adios";
 echo "hola adios y buenas tardes";
+echo "prueba";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
