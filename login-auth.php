@@ -9,7 +9,9 @@
 		$result = $conn->query($sql);
 		$row = $result->fetch_array();
 		if($row){
-
+			?>
+		<script>window.location.replace("http://localhost/Servidor/Galeria-EduRober/Galeria-EduRober/gallery.php");</script>
+		<?php
 		}
 	}
 ?>
