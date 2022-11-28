@@ -9,7 +9,7 @@
 		$row = $result->fetch_array();
 		if($row){
 			?>
-		<script>window.location.replace("http://localhost/Servidor/Galeria-EduRober/Galeria-EduRober/gallery.php");</script>
+		<script>window.location.replace("./gallery.php");</script>
 		<?php
 		}else{
 			$aux = true;
