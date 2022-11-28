@@ -1,7 +1,23 @@
+<?php
+	include("includes/include-connection.php");
+	var_dump($_POST);
+	if (isset($_POST['btn-login'])) {
+		$email = $_POST['email'];
+		$pass = $_POST['pass'];
+		
+		$sql ="SELECT * FROM authors WHERE email = '$email' and password= '$pass'";
+		echo $sql;
+		$result = $conn->query($sql);
+		$row = $result->fetch_array();
+		if($row){
+
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -30,9 +46,9 @@
 					<img src="login/form/images/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method ="post">
 					<span class="login100-form-title">
-						Member Login
+						Login
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -52,22 +68,12 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" name="btn-login">
 							Login
 						</button>
 					</div>
-
-					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="#">
-							Username / Password?
-						</a>
-					</div>
-
 					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
+						<a class="txt2" href="createUser.php">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
