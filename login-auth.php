@@ -3,7 +3,7 @@
 	if (isset($_POST['btn-login'])) {
 		$email = $_POST['email'];
 		$pass = $_POST['pass'];
-		
+		echo "hola";
 		$sql ="SELECT * FROM authors WHERE email = '$email' and password= '$pass'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_array();
