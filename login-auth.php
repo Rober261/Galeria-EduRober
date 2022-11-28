@@ -8,9 +8,7 @@
 		$result = $conn->query($sql);
 		$row = $result->fetch_array();
 		if($row){
-			?>
-		<script>window.location.replace("./gallery.php");</script>
-		<?php
+			header('Location: ./gallery.php');
 		}else{
 			$aux = true;
 		}
