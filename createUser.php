@@ -85,9 +85,9 @@ if (isset($_POST['btn-register'])) {
                             if (isset($_POST['btn-register'])) {
                                 echo "<br>";
                             if($aux){
-                            echo "<div class='alert alert-success'>¡Ejemplo mensaje de éxito!</div>";
+                            echo "<div class='alert alert-success'>Se ha creado el usuario correctamente</div>";
                             }else{ 
-                            echo "<div class='alert alert-error'>¡Ejemplo mensaje de error!</div>";                            
+                            echo "<div class='alert alert-error'>Error al crear usuario</div>";                            
                              }
                             }                               
                              ?>   
