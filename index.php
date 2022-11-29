@@ -8,5 +8,10 @@
 </head>
 <body>
   <h1>Galeria de prueba</h1>
+  <a href="./sitePages/gallery.php"><input type="button" value="Ir a Galería"></a>
+  <a href="./sitePages/createUser.php"><input type="button" value="Ir a Crear Usuario"></a>
+  <a href="./sitePages/uploadImages.php"><input type="button" value="Ir a Subir Imágenes"></a>
+  <a href="./sitePages/login-auth.php"><input type="button" value="Ir a Login"></a>
+
 </body>
 </html>
