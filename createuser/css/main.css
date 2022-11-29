@@ -1,10 +1,10 @@
-/* ==========================================================================
-   #ERROR MSG
-   ========================================================================== */
-.alert-error {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
+/*Creacion de los mensajes de error y correcto*/
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
 }
 
 .alert-success {
@@ -13,12 +13,32 @@
   border-color: #c3e6cb;
 }
 
-.alert {
-  position: relative;
-  padding: .75rem 1.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: .25rem;
+.alert-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+/*A*/
+a {
+	font-family: Poppins-Regular;
+	font-size: 18px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  margin-left: 160px;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+  color: #57b846;
 }
 
 /* ==========================================================================
