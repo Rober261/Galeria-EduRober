@@ -1,32 +1,20 @@
 <?php
 include("includes/include-connection.php");
+$aux = false;
 if (isset($_POST['btn-register'])) {
-
     $name = $_POST['name'];
     $email = $_POST['email'];
     $pass = $_POST['password'];
-
     $sql = "INSERT INTO `authors` (`id`, `name`, `email`, `password`, `created`) VALUES (null, '$name', '$email', '$pass', CURRENT_TIMESTAMP)";
-    echo $sql;
-    if ($conn->query($sql)) { ?>
-        <script>
-            alert("Usuario creado correctamente")
-        </script>
-<?php
-    }
+    if ($conn->query($sql)) {
+        $aux=true;
+    }            
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <style>
-        a {
-            margin-left: 200px;
-            font-size: large;
-
-        }
-    </style>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -86,13 +74,27 @@ if (isset($_POST['btn-register'])) {
                         </div>
                         <div>
                             <button class="btn btn--radius-2 btn--red" type="submit" name="btn-register">Register</button>
-                            
-                                <a class="txt2" href="login-auth.php">
-                                    Login ?
-                                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                                </a>
-                        </div>
 
+                            <a class="txt2" href="login-auth.php">
+                                Login ?
+                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                            </a>
+                            </div>
+                            <div>
+                            <?php
+                            if (isset($_POST['btn-register'])) {
+                                echo "<br>";
+                            if($aux){
+                            echo "<div class='alert alert-success'>¡Ejemplo mensaje de éxito!</div>";
+                            }else{ 
+                            echo "<div class='alert alert-error'>¡Ejemplo mensaje de error!</div>";                            
+                             }
+                            }                               
+                             ?>   
+                        </div>
+                        <div>
+                            
+                        </div>
                     </form>
                 </div>
             </div>
