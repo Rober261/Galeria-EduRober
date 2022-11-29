@@ -72,14 +72,18 @@ if (isset($_POST['btn-register'])) {
                                 </div>
                             </div>
                         </div>
+
+                        <div class="form-row">
                             <button class="btn btn--radius-2 btn--red" type="submit" name="btn-register">Register</button>
                             <div class="division-margin">
                                 <a class="txt2" href="login-auth.php">
                                     Login ?<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i></a>
+                                <span> &nbsp;&nbsp;&nbsp;&nbsp;</span>
                                 <a class="txt2" href="../index.php">
                                     Gallery
                                     <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                                 </a>
+                             </div>
                         </div>
                         <div>
                             <?php
