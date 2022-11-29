@@ -19,6 +19,12 @@
   border-color: #f5c6cb;
 }
 /*A*/
+.division-margin{
+  margin: auto;
+}
+#pepe{
+  display: inline;
+}
 a {
 	font-family: Poppins-Regular;
 	font-size: 18px;
@@ -29,7 +35,6 @@ a {
 	-webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
-  margin-left: 160px;
 }
 
 a:focus {

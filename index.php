@@ -1,11 +1,9 @@
 <?php
-include("includes/include-connection.php"); 
+include("./includes/include-connection.php"); 
   $sql = "SELECT file FROM images";
 	$result = $conn->query($sql);
 	$row = $result->fetch_array();
-	
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +11,12 @@ include("includes/include-connection.php");
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galeria de prueba</title>
-  <link rel="stylesheet" href="./gallery/bootstrap.min.css">
-  <script src="./gallery/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="./templatesStyles/gallery/bootstrap.min.css">
+  <script src="./templatesStyles/gallery/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+  <?php include("./includes/navbar.php");?>
+<!-- Gallery list -->
 <div class="container">
 
 <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Thumbnail Gallery</h1>

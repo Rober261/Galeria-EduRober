@@ -7,8 +7,8 @@ if (isset($_POST['btn-register'])) {
     $pass = $_POST['password'];
     $sql = "INSERT INTO `authors` (`id`, `name`, `email`, `password`, `created`) VALUES (null, '$name', '$email', '$pass', CURRENT_TIMESTAMP)";
     if ($conn->query($sql)) {
-        $aux=true;
-    }            
+        $aux = true;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -72,28 +72,29 @@ if (isset($_POST['btn-register'])) {
                                 </div>
                             </div>
                         </div>
-                        <div>
                             <button class="btn btn--radius-2 btn--red" type="submit" name="btn-register">Register</button>
-
-                            <a class="txt2" href="login-auth.php">
-                                Login ?
-                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                            </a>
-                            </div>
-                            <div>
+                            <div class="division-margin">
+                                <a class="txt2" href="login-auth.php">
+                                    Login ?<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i></a>
+                                <a class="txt2" href="../index.php">
+                                    Gallery
+                                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                </a>
+                        </div>
+                        <div>
                             <?php
                             if (isset($_POST['btn-register'])) {
                                 echo "<br>";
-                            if($aux){
-                            echo "<div class='alert alert-success'>Se ha creado el usuario correctamente</div>";
-                            }else{ 
-                            echo "<div class='alert alert-error'>Error al crear usuario</div>";                            
-                             }
-                            }                               
-                             ?>   
+                                if ($aux) {
+                                    echo "<div class='alert alert-success'>Se ha creado el usuario correctamente</div>";
+                                } else {
+                                    echo "<div class='alert alert-error'>Error al crear usuario</div>";
+                                }
+                            }
+                            ?>
                         </div>
                         <div>
-                            
+
                         </div>
                     </form>
                 </div>

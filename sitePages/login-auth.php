@@ -90,7 +90,13 @@ $aux = false;
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
+						<br>
+						<a class="txt2" href="../index.php">
+							Gallery
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
 					</div>
+					
 				</form>
 			</div>
 		</div>
