@@ -13,7 +13,7 @@
 
     if (in_array($_FILES['file']['type'], $types )) {
 
-      move_uploaded_file($_FILES['file']['tmp_name'], "./images/".$_FILES['file']['name']);
+      move_uploaded_file($_FILES['file']['tmp_name'], "../images/".$_FILES['file']['name']);
       $imgUrl=$_FILES['file']['name'];
       $size=$_FILES['file']['size'];
       $sql="INSERT INTO images (author_id, name, file, size, text, enabled) VALUES($authorId, '$nameImg', '$imgUrl', $size, '$text', $enabled)";
