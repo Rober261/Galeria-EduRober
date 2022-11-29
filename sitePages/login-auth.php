@@ -1,5 +1,5 @@
 <?php
-include("includes/include-connection.php");
+include("../includes/include-connection.php");
 $aux=true;
 if (isset($_POST['btn-login'])) {
 	$email = $_POST['email'];
@@ -24,20 +24,20 @@ $aux = false;
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="login/form/images/icons/favicon.ico" />
+	<link rel="icon" type="image/png" href="../templatesStyles/login/form/images/icons/favicon.ico" />
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/form/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../templatesStyles/login/form/vendor/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/form/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../templatesStyles/login/form/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/form/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="../templatesStyles/login/form/vendor/animate/animate.css">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/form/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="../templatesStyles/login/form/vendor/css-hamburgers/hamburgers.min.css">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/form/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="../templatesStyles/login/form/vendor/select2/select2.min.css">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/form/css/util.css">
-	<link rel="stylesheet" type="text/css" href="login/form/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../templatesStyles/login/form/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../templatesStyles/login/form/css/main.css">
 	<!--===============================================================================================-->
 </head>
 
@@ -47,7 +47,7 @@ $aux = false;
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="login/form/images/img-01.png" alt="IMG">
+					<img src="../templatesStyles/login/form/images/img-01.png" alt="IMG">
 				</div>
 
 				<form class="login100-form validate-form" method="post">
@@ -100,21 +100,21 @@ $aux = false;
 
 
 	<!--===============================================================================================-->
-	<script src="login/form/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../templatesStyles/login/form/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="login/form/vendor/bootstrap/js/popper.js"></script>
-	<script src="login/form/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../templatesStyles/login/form/vendor/bootstrap/js/popper.js"></script>
+	<script src="../templatesStyles/login/form/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="login/form/vendor/select2/select2.min.js"></script>
+	<script src="../templatesStyles/login/form/vendor/select2/select2.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="login/form/vendor/tilt/tilt.jquery.min.js"></script>
+	<script src="../templatesStyles/login/form/vendor/tilt/tilt.jquery.min.js"></script>
 	<script>
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})
 	</script>
 	<!--===============================================================================================-->
-	<script src="login/form/js/main.js"></script>
+	<script src="../templatesStyles/login/form/js/main.js"></script>
 
 </body>
 

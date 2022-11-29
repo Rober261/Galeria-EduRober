@@ -1,5 +1,5 @@
 <?php
-  include('./includes/include-connection.php');
+  include('../includes/include-connection.php');
 
   $error=false;
   $types=["image/jpeg","image/jpg","image/jpeg","image/png","image/gif"];
@@ -43,17 +43,17 @@
     <title>Registration Form</title>
 
     <!-- Icons font CSS-->
-    <link href="createuser/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="createuser/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="../templatesStyles/createuser/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../templatesStyles/createuser/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
     <!-- Vendor CSS-->
-    <link href="createuser/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="createuser/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link href="../templatesStyles/createuser/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../templatesStyles/createuser/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="createuser/css/main.css" rel="stylesheet" media="all">
+    <link href="../templatesStyles/createuser/css/main.css" rel="stylesheet" media="all">
 </head>
 
 <body>
@@ -140,36 +140,16 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="createuser/vendor/jquery/jquery.min.js"></script>
+    <script src="../templatesStyles/createuser/vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
-    <script src="createuser/vendor/select2/select2.min.js"></script>
-    <script src="createuser/vendor/datepicker/moment.min.js"></script>
-    <script src="createuser/vendor/datepicker/daterangepicker.js"></script>
+    <script src="../templatesStyles/createuser/vendor/select2/select2.min.js"></script>
+    <script src="../templatesStyles/createuser/vendor/datepicker/moment.min.js"></script>
+    <script src="../templatesStyles/createuser/vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
-    <script src="createuser/js/global.js"></script>
+    <script src="../templatesStyles/createuser/js/global.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
 <!-- end document-->
-  
-  
-  
-<!--   
-  
-  <form action="" method="post">
-    <label for="authors">Autor<select name="author" id="authors">
-    </select>
-
-    <label for="name"><input type="text" name="name" id="name"></label>
-
-    <label for="file"><input type="file" name="file" id="file"></label>
-
-    <label for="text">Texto <textarea name="text" id="text" cols="30" rows="10"></textarea></label>
-
-    <label for="enabled">Activado <input type="checkbox" name="enabled" id="enabled"></label>
-
-  </form> -->
-
-
