@@ -9,6 +9,8 @@ if (isset($_POST['btn-login'])) {
 	$result = $conn->query($sql);
 	$row = $result->fetch_array();
 	if ($row) {
+		setcookie("User_name",$row['name'],time()+3600);
+		setcookie("User_id",$row['id'],time()+3600);
 		header('Location: ./gallery.php');
 	} else {
 		$aux = false;
