@@ -22,7 +22,9 @@
 .division-margin{
   margin: auto;
 }
-
+.margin-a-upload{
+  margin-left: 190px;
+}
 a {
 	font-family: Poppins-Regular;
 	font-size: 18px;

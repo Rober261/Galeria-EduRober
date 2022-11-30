@@ -117,6 +117,8 @@ if (isset($_POST['btn-register'])) {
     <script src="../templatesStyles/createuser/js/global.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
+<?php 
+include("../includes/footer.php");
+?>
 </html>
 <!-- end document-->
