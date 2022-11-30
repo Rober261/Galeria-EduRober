@@ -18,6 +18,11 @@
   background-color: #f8d7da;
   border-color: #f5c6cb;
 }
+
+/* centrar botones de la página de modificación*/
+.botones{
+  margin: auto;
+}
 /*A*/
 .division-margin{
   margin: auto;
