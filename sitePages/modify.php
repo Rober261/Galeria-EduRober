@@ -5,8 +5,10 @@
   $sql="SELECT * FROM images WHERE id=$idImage";
   $result=$conn->query($sql);
   
+  //comprobaciones previas a modificar
   if(isset($_POST['btnModify']) || !empty($_FILES['file']['name'])){
 
+    //recogemos las variables
     $id=$_POST['authors'];
     $name=$_POST['name'];
     $file=$_FILES['file']['name'];
@@ -14,24 +16,33 @@
     $text=$_POST['text'];
     $enabled=isset($_POST['enabled'])?"1":"0";
 
-    $sql="UPDATE images SET author_id=$id,name='$name',file='$file',size=$size,text='$text',enabled=$enabled WHERE id=$idImage";
+    //comprobamos si se modica el fichero
+    if ($file!="" && $size!="") {
+      $sql="UPDATE images SET author_id=$id,name='$name',file='$file',size=$size,text='$text',enabled=$enabled WHERE id=$idImage";
+    }else{
+      $sql="UPDATE images SET author_id=$id,name='$name',text='$text',enabled=$enabled WHERE id=$idImage";
+    }
 
+    //ejecutamos la query y comprobamos si falla
     if (!$conn->query($sql)) {
       $error=true;
     }
 
   }
 
+  //comprobaciones previas a eliminar
   if(isset($_POST['btnDelete']) && $idImage>0){
 
     $sql="DELETE FROM images WHERE id=$idImage";
 
+    //ejecutamos la query y comprobamos si falla
     if (!$conn->query($sql)) {
       $error=true;
     }
     
   }
-  
+
+  //buscamos la imagen para recoger sus datos antiguos
   if ($result) {
     $row=$result->fetch_array();
 
@@ -48,13 +59,12 @@
     $result=$conn->query($sql);
     $row=$result->fetch_array();
     $authorName=$row['name'];
+
+  //si no se encuenta la imagen se devuelve error
   }else{
     $error=true;
   }
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,7 +77,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Registration Form</title>
+    <title>Modify Image</title>
 
     <!-- Icons font CSS-->
     <link href="../templatesStyles/createuser/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -85,6 +95,7 @@
 
 <body>
   <?php
+  //si no se encuentra la imagen da error y no se muestra el resto de la página
   if(isset($error)){
   echo "<div class='alert alert-error'>Se ha producido un error grave</div>";
   die();
@@ -94,7 +105,7 @@
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Datos Imagen</h2>
+                    <h2 class="title">Image Data Modify</h2>
                 </div>
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data">
@@ -106,6 +117,9 @@
                           $error=false;
                         }else{
                           echo "<div class='alert alert-success'>Modificado correctamente</div>";
+                        ?>
+                          <meta http-equiv="Refresh" content="20;url=http://galeria.dsw/sitePages/modify.php?id_image=<?=$idImage?>">
+                        <?php
                         }
                         echo "<br>";
                       }
@@ -121,7 +135,7 @@
                       ?>
                       </div>
                         <div class="form-row">
-                            <div class="name">Autor</div>
+                            <div class="name">Author</div>
                             <div class="value">
                                 <div class="input-group-desc">
                                     <select class="input--style-5" name="authors" id="authors">
@@ -143,16 +157,16 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Nombre</div>
+                            <div class="name">Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="name" value="<?=$imgname?>" >
+                                    <input class="input--style-5" type="text" name="name" value="<?=$imgname?>" required>
                                     <input type="hidden" name="imgid" value="<?=$idImage?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Fichero</div>
+                            <div class="name">File</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="file" name="file" accept="image/*" ><?=$imgfile?>
@@ -160,15 +174,15 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Texto</div>
+                            <div class="name">Text</div>
                             <div class="value">
                                 <div class="input-group">
-                                  <textarea class="input--style-5" name="text" cols="43" rows="2"><?=$imgtext?></textarea>
+                                  <textarea class="input--style-5" name="text" cols="43" rows="2" required><?=$imgtext?></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Activado</div>
+                            <div class="name">Enable</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="checkbox" name="enabled" <?=$checked?> >
@@ -176,7 +190,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Fecha de modificación</div>
+                            <div class="name">Creation Date</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="text" name="date" readonly value="<?=$imgdate?>">
@@ -186,8 +200,8 @@
                         
                         <div class="form-row">
                           <div class="botones">
-                              <button class="btn btn--radius-2 btn--green" type="submit" name="btnModify">Modificar</button>
-                              <button class="btn btn--radius-2 btn--red" type="submit" name="btnDelete">Eliminar</button>
+                              <button class="btn btn--radius-2 btn--green" type="submit" name="btnModify">Modify</button>
+                              <button class="btn btn--radius-2 btn--red" type="submit" name="btnDelete">Remove</button>
                           </div>
                         </div>
 
