@@ -6,6 +6,8 @@ $types = ["image/jpeg", "image/jpg", "image/jpeg", "image/png", "image/gif"];
 
 if (isset($_POST['btnUpload'])) {
 
+  if (isset($_POST['authors'])!="") {
+  //arreglar lo de filtrar
   $authorId = $_POST['authors'];
   $nameImg = $_POST['name'];
   $text = $_POST['text'];
@@ -24,6 +26,13 @@ if (isset($_POST['btnUpload'])) {
     }
   } else {
     $error = true;
+  }
+
+  }else{
+    if (!in_array($_FILES['file']['type'], $types)) {
+    $error=true;
+    }
+    $error2=true;
   }
 }
 ?>
@@ -67,9 +76,15 @@ if (isset($_POST['btnUpload'])) {
             <div>
               <?php
               if (isset($_POST['btnUpload'])) {
+
+                if (isset($error2)) {
+                  echo "<div class='alert alert-error'>Select an User</div>";
+                } 
+                echo "<br>";
                 if ($error) {
                   echo "<div class='alert alert-error'>File Type Not Allowed</div>";
-                } else {
+                }
+                 else {
                   echo "<div class='alert alert-success'>Successfully Uploaded</div>";
                 }
                 echo "<br>";
@@ -80,6 +95,7 @@ if (isset($_POST['btnUpload'])) {
               <div class="name">Author</div>
               <div class="value">
                 <div class="input-group-desc">
+                  
                   <select class="input--style-5" name="authors" id="authors" required>
                     <option disabled selected>Select User</option>
                     <?php
