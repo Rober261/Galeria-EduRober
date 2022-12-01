@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../templatesStyles/styles/footer.css">
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 <footer>
   <p>
     <span> Eduardo Chinea Clemente</span>

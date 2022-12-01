@@ -23,7 +23,7 @@ if (isset($_POST['btn-register'])) {
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Registration Form</title>
+    <title>Create User</title>
 
     <!-- Icons font CSS-->
     <link href="../templatesStyles/createuser/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">

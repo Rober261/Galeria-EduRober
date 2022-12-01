@@ -15,5 +15,7 @@ footer{
 span{
   text-align: center;
   padding: 0 50px;
-  
+}
+footer p{
+  color: white;
 }
