@@ -29,12 +29,23 @@ $sql = "SELECT * FROM images WHERE author_id = $user_id ";
 
 <div class="row text-center text-lg-start">
   <?php
+
+  if (!$row) {
+    ?>
+    <div class="sinImagen">
+      <br><br><br>
+      <span>EL USUARIO NO TIENE IMAGENES ASOCIADAS</span>
+    </div>
+    <?php
+  }
   while($row != null){
   echo "<div class='col-lg-3 col-md-4 col-6'>";
   echo  "<a href='./modify.php?id_image=$row[id]'>";
   echo  "<img class='img-style img-fluid img-thumbnail' src='../images/$row[file]' alt='aire'></a></div>";
   $row = $result->fetch_array();
   }
+
+
   ?>
     
 </div>
