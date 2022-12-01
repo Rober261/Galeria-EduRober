@@ -118,7 +118,7 @@
                         }else{
                           echo "<div class='alert alert-success'>Modificado correctamente</div>";
                         ?>
-                          <meta http-equiv="Refresh" content="20;url=http://galeria.dsw/sitePages/modify.php?id_image=<?=$idImage?>">
+                          <meta http-equiv="Refresh" content="3;url=http://galeria.dsw/sitePages/modify.php?id_image=<?=$idImage?>">
                         <?php
                         }
                         echo "<br>";
@@ -129,6 +129,9 @@
                           $error=false;
                         }else{
                           echo "<div class='alert alert-success'>Eliminado correctamente</div>";
+                          ?>
+                          <meta http-equiv="Refresh" content="2;url=http://galeria.dsw/sitePages/gallery.php">
+                          <?php
                         }
                         echo "<br>";
                       }
