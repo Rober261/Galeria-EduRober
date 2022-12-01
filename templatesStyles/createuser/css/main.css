@@ -18,16 +18,13 @@
   background-color: #f8d7da;
   border-color: #f5c6cb;
 }
-
-/* centrar botones de la página de modificación*/
-.botones{
-  margin: auto;
-}
-/*A*/
+/*A*/ 
 .division-margin{
   margin: auto;
 }
-
+.margin-a-upload{
+  margin-left: 190px;
+}
 a {
 	font-family: Poppins-Regular;
 	font-size: 18px;
@@ -38,6 +35,7 @@ a {
 	-webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
+  text-decoration: none;
 }
 
 a:focus {

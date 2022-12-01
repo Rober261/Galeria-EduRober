@@ -17,7 +17,7 @@
       $imgUrl=$_FILES['file']['name'];
       $size=$_FILES['file']['size'];
       $sql="INSERT INTO images (author_id, name, file, size, text, enabled) VALUES($authorId, '$nameImg', '$imgUrl', $size, '$text', $enabled)";
-      $result=$conn->query($sql);
+      $result=$conn->query($sql); 
 
       if (!$result) {
         $error=true;
@@ -119,6 +119,8 @@
                         
                         <div>
                             <button class="btn btn--radius-2 btn--red" type="submit" name="btnUpload">Subir</button>
+                            <a class="txt2 margin-a-upload" href="./gallery.php">
+                                Go Back<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i></a>
                         </div>
                         <div>
                           <?php
@@ -150,6 +152,8 @@
     <script src="../templatesStyles/createuser/js/global.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
+<?php 
+include("../includes/footer.php");
+?>
 </html>
 <!-- end document-->

@@ -125,5 +125,7 @@ $aux = false;
 	<script src="../templatesStyles/login/form/js/main.js"></script>
 
 </body>
-
+<?php 
+include("../includes/footer.php");
+?>
 </html>

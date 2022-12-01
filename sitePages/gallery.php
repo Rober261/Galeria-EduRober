@@ -6,7 +6,6 @@ $user_name = $_COOKIE['User_name'];
 $sql = "SELECT * FROM images WHERE author_id = $user_id ";
 	$result = $conn->query($sql);
 	$row = $result->fetch_array();
-	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +15,11 @@ $sql = "SELECT * FROM images WHERE author_id = $user_id ";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../templatesStyles/gallery/bootstrap.min.css">
   <script src="../templatesStyles/gallery/bootstrap.bundle.min.js"></script>
-  <title>Gallery</title>
+  <title>Gallery of <?= $user_name ?></title>
 </head>
 <body>
+  <!-- Nav Bar -->
+<?php include("../includes/navbar-usergallery.php") ?>
   <!-- Page Content -->
 <div class="container">
 
@@ -30,15 +31,17 @@ $sql = "SELECT * FROM images WHERE author_id = $user_id ";
   <?php
   while($row != null){
   echo "<div class='col-lg-3 col-md-4 col-6'>";
-  echo  "<a href='./modify.php?id_image=$row[id]' class='d-block mb-4 h-100'>";
-  echo    "<img class='img-fluid img-thumbnail' src='../images/$row[file]' alt='aire'>";
+  echo  "<a href='./modify.php?id_image=$row[id]'>";
+  echo  "<img class='img-style img-fluid img-thumbnail' src='../images/$row[file]' alt='aire'></a></div>";
   $row = $result->fetch_array();
   }
   ?>
-    </a>
-  </div>
+    
 </div>
 
 </div>
 </body>
+<?php 
+include("../includes/footer.php");
+?>
 </html>
