@@ -27,7 +27,7 @@ include("./includes/include-connection.php");
     <?php 
     while($row!= null){ 
       echo   "<div class='col-lg-3 col-md-4 col-6'>";
-      echo   "<img class='img-fluid img-thumbnail' src='images/$row[file]'>";
+      echo   "<img class='img-style img-fluid img-thumbnail' src='images/$row[file]'>";
       echo   "</div>";
     $row = $result->fetch_array();
     }

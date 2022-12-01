@@ -94,7 +94,9 @@
 </head>
 
 <body>
+  
   <?php
+  include("../includes/navbar-modify.php");
   //si no se encuentra la imagen da error y no se muestra el resto de la página
   if(isset($error)){
   echo "<div class='alert alert-error'>Se ha producido un error grave</div>";
@@ -207,13 +209,11 @@
                               <button class="btn btn--radius-2 btn--red" type="submit" name="btnDelete">Remove</button>
                           </div>
                         </div>
-
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Jquery JS-->
     <script src="../templatesStyles/createuser/vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
@@ -223,7 +223,7 @@
 
     <!-- Main JS-->
     <script src="../templatesStyles/createuser/js/global.js"></script>
-
+<?php include("../includes/footer.php") ;?>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
