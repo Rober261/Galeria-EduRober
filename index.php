@@ -24,7 +24,18 @@ include("./includes/include-connection.php");
 <hr class="mt-2 mb-5">
 
   <div class="row text-center text-lg-start">
-    <?php 
+  <?php
+    if (!$row) {
+      ?>
+      <div class="sinImagen">
+        <br><br><br>
+        <span>NO EXISTEN IMAGENES ASOCIADAS A LA BASE DE DATOS</span>
+        <br><br><br>
+        <span>INICIE SESIÓN PARA SUBIR NUEVAS IMÁGENES</span>
+
+      </div>
+      <?php
+    }
     while($row!= null){ 
       echo   "<div class='col-lg-3 col-md-4 col-6'>";
       echo   "<img class='img-style img-fluid img-thumbnail' src='images/$row[file]' alt='$row[text]'>";
